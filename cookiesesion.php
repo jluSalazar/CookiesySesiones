@@ -60,15 +60,16 @@ else{
 #––––––––––SESION––––––––––––
 
 #Primer ingreso
-if (isset ($_POST["nombre"]) && isset($_POST["clave"])){
     if ($_POST["nombre"]=="jona" && $_POST["clave"] == "jona123"){
         $_SESSION["nombre"] = $_POST["nombre"];
         $_SESSION["clave"] = $_POST["clave"];
         include_once("redirigir.php");
-    }else{
+    }else if (isset ($_SESSION["nombre"]) && isset($_SESSION["clave"])){
+        include_once("redirigir.php");
+    }else {
         header("Location: index.php");
     }
-} 
+/*
 # Cualquier otro ingreso con sesion creada
 #if (isset($_SESSION["nombre"]) && isset($_SESSION["clave"])){
 else if (isset ($_SESSION["nombre"]) && isset($_SESSION["clave"])){
@@ -76,6 +77,6 @@ else if (isset ($_SESSION["nombre"]) && isset($_SESSION["clave"])){
     }else {
         header("Location: index.php");
     }
-
+*/
 
 ?>

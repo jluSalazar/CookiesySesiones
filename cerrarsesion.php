@@ -1,8 +1,9 @@
 <?php
 
-include_once("./controlacceso");
+session_start();
 
 session_destroy();
+
 header("Location: index.php");
 
 ?>

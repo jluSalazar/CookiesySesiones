@@ -1,4 +1,5 @@
 <?php
+
 include_once("./controlacceso.php");
 
 print("GET:");
